@@ -31,39 +31,44 @@ int main()
             pol.addVert(x, y);
         }
 
-        opcao2 = menu_secundario(opcao);
+        while (1){
 
-        if(opcao2 == 0){
-            return 0;
-        }
-        if(opcao2 == 1){
-            pol.imprime();
-            cout << endl;
-        }
-        else if(opcao2 == 2){
-            cout << "Area do poligono: " << pol.area();
-            cout << endl;
-        }
-        else if(opcao2 == 3){
-            int a, b;
-            cout << "Informe os valores para transladar o poligono em x e y:";
-            cin >> a >> b;
-            pol.transladaPol(a, b);
-            cout << "Poligono transladado: \n";
-            pol.imprime();
-            cout << endl;
-        }
-        else if(opcao2 == 4){
-            int a, b, angulo;
-            cout << "Informe a coordenada referencia para rotacao e em seguida o angulo:";
-            cin >> a >> b >> angulo;
-            pol.rotaciona(angulo, a, b);
-            cout << "Poligono rotacionado: \n";
-            pol.imprime();
-            cout << endl;
-        }
-        else{
-            return -1;
+            opcao2 = menu_secundario(opcao);
+
+            if(opcao2 == 0){
+                return 0;
+            }
+            if(opcao2 == 1){
+                pol.imprime();
+                cout << endl;
+            }
+            else if(opcao2 == 2){
+                cout << "Area do poligono: " << pol.area();
+                cout << endl;
+            }
+            else if(opcao2 == 3){
+                int a, b;
+                cout << "Informe os valores para transladar o poligono em x e y:";
+                cin >> a >> b;
+                pol.transladaPol(a, b);
+                cout << "Poligono transladado: \n";
+                pol.imprime();
+                cout << endl;
+            }
+            else if(opcao2 == 4){
+                int a, b, angulo;
+                cout << "Informe a coordenada referencia para rotacao e em seguida o angulo:";
+                cin >> a >> b >> angulo;
+                pol.rotaciona(angulo, a, b);
+                cout << "Poligono rotacionado: \n";
+                pol.imprime();
+                cout << endl;
+            }
+            else{
+                return -1;
+            }
+
+            cout << endl << endl;
         }
     }
 
@@ -75,41 +80,38 @@ int main()
         cin >> largura >> altura;
         Retangulo ret(x, y, largura, altura);
 
-        opcao2 = menu_secundario(opcao);
+        while (1){
+            opcao2 = menu_secundario(opcao);
 
-        if(opcao2 == 0){
-            return 0;
-        }
-        if(opcao2 == 1){
-            ret.imprime();
-            cout << endl;
-        }
-        else if(opcao2 == 2){
-            cout << "Area do retangulo: " << ret.area();
-            cout << endl;
-        }
-        else if(opcao2 == 3){
-            float a, b;
-            cout << "Informe os valores para transladar o retangulo em x e y: ";
-            cin >> a >> b;
-            ret.transladaPol(a, b);
-            cout << "Retangulo transladado: \n";
-            ret.imprime();
-            cout << endl;
-        }
-        else if(opcao == 4){
-            float a, b, angulo;
-            cout << "Informe a coordenada referencia para rotacao e em seguida o angulo:";
-            cin >> a >> b >> angulo;
-            ret.rotaciona(angulo, a, b);
-            cout << "Retangulo rotacionado: \n";
-            ret.imprime();
-            cout << endl;
-        }
-        else{
-            return -1;
-        }
+            if(opcao2 == 0){
+                return 0;
+            }
+            if(opcao2 == 1){
+                ret.imprime();
+                cout << endl;
+            }
+            else if(opcao2 == 2){
+                cout << "Area do retangulo: " << ret.area();
+                cout << endl;
+            }
+            else if(opcao2 == 3){
+                float a, b;
+                cout << "Informe os valores para transladar o retangulo em x e y: ";
+                cin >> a >> b;
+                ret.transladaPol(a, b);
+            }
+            else if(opcao2 == 4){
+                float a, b, angulo;
+                cout << "Informe a coordenada referencia para rotacao e em seguida o angulo:";
+                cin >> a >> b >> angulo;
+                ret.rotaciona(angulo, a, b);
+            }
+            else{
+                return -1;
+            }
 
+            cout << endl << endl;
+        }
     }
 
     else{
